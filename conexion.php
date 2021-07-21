@@ -1,6 +1,6 @@
 <?php
 //1.-Definis parametros de conexion con la bd
-$mysqli = new mysqli('localhost','root','','mexico');
+$mysqli = new mysqli('localhost','root','','ventas');
 
 if(mysqli_connect_errno()){
     echo 'conexion fallida', mysqli_connect_error();

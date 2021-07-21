@@ -9,7 +9,7 @@ class PDF extends FPDF
         $this->Image('image/speedy.jpg',5,5,30);
         $this->SetFont('Arial','B',15);
         $this->Cell(30);
-        $this->Cell(120,10,'Reporte de Estados',0,0,'C');
+        $this->Cell(120,10,'Reporte de Productos',0,0,'C');
         $this->Ln(20);
     }
 

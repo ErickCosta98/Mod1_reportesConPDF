@@ -5,7 +5,7 @@ require 'conexion.php';
 
 //crear el pdf con un objeto de la clase
 
-$query = 'SELECT e.estado , m.id_municipio , m.municipio FROM t_municipio as m INNER JOIN t_estado as e on m.id_estado = e.id_estado';
+$query = 'SELECT * FROM productos';
 
 $resultado = $mysqli->query($query);
 
@@ -17,18 +17,23 @@ $pdf->AliasNbPages();
 $pdf->AddPage();
 
 //fuente
-$pdf->SetFont('Arial','B',12);
+$pdf->SetFont('Arial','B',10);
 
 $pdf->SetFillColor(232,232,232);
-$pdf->Cell(70,6,'ESTADO',1,0,'C',1);
-$pdf->Cell(20,6,'ID',1,0,'C',1);
-$pdf->Cell(70,6,'MUNICIPIO',1,1,'C',1);
-// $pdf->Cell(100,10,'Hola mundo',1,1,'C');
-// $pdf->Cell(100,10,'Hola mundo2',1,0,'C');
+$pdf->Cell(15,6,'CODIGO',1,0,'C',1);
+$pdf->Cell(35,6,'NOMBRE',1,0,'C',1);
+$pdf->Cell(40,6,'DESCRIPCION',1,0,'C',1);
+$pdf->Cell(35,6,'PRECIO DE VENTA',1,0,'C',1);
+$pdf->Cell(40,6,'PRECIO DE COMPRA',1,0,'C',1);
+$pdf->Cell(22,6,'EXISTENCIA',1,1,'C',1);
 while($row = $resultado->fetch_assoc()){
-    $pdf->Cell(70,6,$row['estado'],1,0,'C',1);
-    $pdf->Cell(20,6,$row['id_municipio'],1,0,'C',1);
-    $pdf->Cell(70,6,$row['municipio'],1,1,'C',1);
+    $pdf->Cell(15,6,$row['codigo'],1,0,'C',1);
+    $pdf->Cell(35,6,$row['nombre'],1,0,'C',1);
+    $pdf->Cell(40,6,$row['descripcion'],1,0,'C',1);
+    $pdf->Cell(35,6,$row['precioVenta'],1,0,'C',1);
+    $pdf->Cell(40,6,$row['precioCompra'],1,0,'C',1);
+    $pdf->Cell(22,6,$row['existencia'],1,1,'C',1);
+
 
 }
 
