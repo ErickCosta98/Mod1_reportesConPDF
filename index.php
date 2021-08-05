@@ -26,6 +26,7 @@ $pdf->Cell(40,6,'DESCRIPCION',1,0,'C',1);
 $pdf->Cell(35,6,'PRECIO DE VENTA',1,0,'C',1);
 $pdf->Cell(40,6,'PRECIO DE COMPRA',1,0,'C',1);
 $pdf->Cell(22,6,'EXISTENCIA',1,1,'C',1);
+
 while($row = $resultado->fetch_assoc()){
     $pdf->Cell(15,6,$row['codigo'],1,0,'C',1);
     $pdf->Cell(35,6,$row['nombre'],1,0,'C',1);
